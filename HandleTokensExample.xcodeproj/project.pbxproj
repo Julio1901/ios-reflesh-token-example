@@ -17,6 +17,10 @@
 		F49946D22CF219CF008A5E83 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49946D12CF219CF008A5E83 /* MainViewModel.swift */; };
 		F49946D52CF21C6C008A5E83 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49946D42CF21C6B008A5E83 /* NetworkClient.swift */; };
 		F49946D82CF21CBA008A5E83 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49946D72CF21CBA008A5E83 /* AuthResponse.swift */; };
+		F49946DB2CF38160008A5E83 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49946DA2CF38160008A5E83 /* SecureStorage.swift */; };
+		F49946DE2CF381B4008A5E83 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49946DD2CF381B4008A5E83 /* KeychainManager.swift */; };
+		F49946E02CF3884A008A5E83 /* ProtectedRouteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49946DF2CF3884A008A5E83 /* ProtectedRouteResponse.swift */; };
+		F49946E22CF39AA4008A5E83 /* RefleshTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49946E12CF39AA4008A5E83 /* RefleshTokenResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		F49946D12CF219CF008A5E83 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		F49946D42CF21C6B008A5E83 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		F49946D72CF21CBA008A5E83 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		F49946DA2CF38160008A5E83 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
+		F49946DD2CF381B4008A5E83 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		F49946DF2CF3884A008A5E83 /* ProtectedRouteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtectedRouteResponse.swift; sourceTree = "<group>"; };
+		F49946E12CF39AA4008A5E83 /* RefleshTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefleshTokenResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,8 @@
 		F49946B82CF2070E008A5E83 /* HandleTokensExample */ = {
 			isa = PBXGroup;
 			children = (
+				F49946DC2CF38187008A5E83 /* Data */,
+				F49946D92CF38149008A5E83 /* Domain */,
 				F49946D62CF21CA6008A5E83 /* Models */,
 				F49946D32CF21C23008A5E83 /* Network */,
 				F49946D02CF219B8008A5E83 /* ViewModels */,
@@ -107,8 +117,26 @@
 			isa = PBXGroup;
 			children = (
 				F49946D72CF21CBA008A5E83 /* AuthResponse.swift */,
+				F49946DF2CF3884A008A5E83 /* ProtectedRouteResponse.swift */,
+				F49946E12CF39AA4008A5E83 /* RefleshTokenResponse.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F49946D92CF38149008A5E83 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				F49946DA2CF38160008A5E83 /* SecureStorage.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F49946DC2CF38187008A5E83 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F49946DD2CF381B4008A5E83 /* KeychainManager.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,8 +211,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F49946D22CF219CF008A5E83 /* MainViewModel.swift in Sources */,
+				F49946E22CF39AA4008A5E83 /* RefleshTokenResponse.swift in Sources */,
+				F49946E02CF3884A008A5E83 /* ProtectedRouteResponse.swift in Sources */,
 				F49946BE2CF2070E008A5E83 /* ViewController.swift in Sources */,
+				F49946DB2CF38160008A5E83 /* SecureStorage.swift in Sources */,
 				F49946BA2CF2070E008A5E83 /* AppDelegate.swift in Sources */,
+				F49946DE2CF381B4008A5E83 /* KeychainManager.swift in Sources */,
 				F49946BC2CF2070E008A5E83 /* SceneDelegate.swift in Sources */,
 				F49946D82CF21CBA008A5E83 /* AuthResponse.swift in Sources */,
 				F49946CE2CF21384008A5E83 /* HomeViewController.swift in Sources */,

@@ -8,7 +8,11 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    let mainViewModel = MainViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainViewModel.getWelcomeMessage()
     }
 }

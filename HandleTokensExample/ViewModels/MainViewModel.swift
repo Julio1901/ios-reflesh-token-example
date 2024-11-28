@@ -11,8 +11,15 @@ struct MainViewModel {
     
     let networkClient = NetworkClient()
     
-    func logIn(userName: String, password: String) {
-        networkClient.authenticate(userName: userName, password: password)
+    var userLoggedSuccessfully: ((Bool) -> Void)?
+    
+    func logIn(userName: String, password: String, completion: @escaping () -> Void) async {
+        await networkClient.authenticate(userName: userName, password: password)
+        completion()
+    }
+    
+    func getWelcomeMessage() {
+        networkClient.getWelcomeMessage()
     }
     
     
