@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4334AB82CF9F8EB00D7C755 /* GenericBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4334AB72CF9F8EB00D7C755 /* GenericBottomSheet.swift */; };
 		F49946BA2CF2070E008A5E83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49946B92CF2070E008A5E83 /* AppDelegate.swift */; };
 		F49946BC2CF2070E008A5E83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49946BB2CF2070E008A5E83 /* SceneDelegate.swift */; };
 		F49946BE2CF2070E008A5E83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49946BD2CF2070E008A5E83 /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F4334AB72CF9F8EB00D7C755 /* GenericBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericBottomSheet.swift; sourceTree = "<group>"; };
 		F49946B62CF2070E008A5E83 /* HandleTokensExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandleTokensExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F49946B92CF2070E008A5E83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F49946BB2CF2070E008A5E83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 		F49946B82CF2070E008A5E83 /* HandleTokensExample */ = {
 			isa = PBXGroup;
 			children = (
+				F4C2DC9E2CF8D0A700B341D1 /* Components */,
 				F49946DC2CF38187008A5E83 /* Data */,
 				F49946D92CF38149008A5E83 /* Domain */,
 				F49946D62CF21CA6008A5E83 /* Models */,
@@ -137,6 +140,14 @@
 				F49946DD2CF381B4008A5E83 /* KeychainManager.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		F4C2DC9E2CF8D0A700B341D1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F4334AB72CF9F8EB00D7C755 /* GenericBottomSheet.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +231,7 @@
 				F49946BC2CF2070E008A5E83 /* SceneDelegate.swift in Sources */,
 				F49946D82CF21CBA008A5E83 /* AuthResponse.swift in Sources */,
 				F49946CE2CF21384008A5E83 /* HomeViewController.swift in Sources */,
+				F4334AB82CF9F8EB00D7C755 /* GenericBottomSheet.swift in Sources */,
 				F49946D52CF21C6C008A5E83 /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

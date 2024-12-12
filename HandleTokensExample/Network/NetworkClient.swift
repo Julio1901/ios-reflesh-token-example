@@ -20,23 +20,23 @@ class NetworkClient {
             return
         }
         
-        // Parâmetros para a requisição
+ 
         let parameters = [
             "username": userName,
             "password": password
         ]
         
-        // Codificar os parâmetros como x-www-form-urlencoded
+
         let bodyString = parameters.map { "\($0.key)=\($0.value)" }
                                     .joined(separator: "&")
         
-        // Criar a requisição
+
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpBody = bodyString.data(using: .utf8)
         
-        // Configurar a sessão
+
         let session = URLSession.shared
         let task = session.dataTask(with: request) { data, response, error in
             if let error = error {

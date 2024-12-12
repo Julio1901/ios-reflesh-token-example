@@ -26,10 +26,10 @@ final class KeychainManager: SecureStorage {
             kSecValueData as String: data
         ]
         
-        // Remove qualquer entrada existente
+        
         SecItemDelete(query as CFDictionary)
         
-        // Adiciona o novo token
+   
         let status = SecItemAdd(query as CFDictionary, nil)
         return status == errSecSuccess
     }
