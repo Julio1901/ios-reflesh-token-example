@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F432A5D52D0B3EA5007FF308 /* RestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F432A5D42D0B3EA5007FF308 /* RestManager.swift */; };
+		F432A5D72D0B4166007FF308 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F432A5D62D0B4166007FF308 /* Login.swift */; };
 		F4334AB82CF9F8EB00D7C755 /* GenericBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4334AB72CF9F8EB00D7C755 /* GenericBottomSheet.swift */; };
 		F49946BA2CF2070E008A5E83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49946B92CF2070E008A5E83 /* AppDelegate.swift */; };
 		F49946BC2CF2070E008A5E83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49946BB2CF2070E008A5E83 /* SceneDelegate.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F432A5D42D0B3EA5007FF308 /* RestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestManager.swift; sourceTree = "<group>"; };
+		F432A5D62D0B4166007FF308 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		F4334AB72CF9F8EB00D7C755 /* GenericBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericBottomSheet.swift; sourceTree = "<group>"; };
 		F49946B62CF2070E008A5E83 /* HandleTokensExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandleTokensExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F49946B92CF2070E008A5E83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F432A5D32D0B3E92007FF308 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F432A5D42D0B3EA5007FF308 /* RestManager.swift */,
+				F432A5D62D0B4166007FF308 /* Login.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		F49946AD2CF2070E008A5E83 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +150,7 @@
 		F49946DC2CF38187008A5E83 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				F432A5D32D0B3E92007FF308 /* Network */,
 				F49946DD2CF381B4008A5E83 /* KeychainManager.swift */,
 			);
 			path = Data;
@@ -228,10 +242,12 @@
 				F49946DB2CF38160008A5E83 /* SecureStorage.swift in Sources */,
 				F49946BA2CF2070E008A5E83 /* AppDelegate.swift in Sources */,
 				F49946DE2CF381B4008A5E83 /* KeychainManager.swift in Sources */,
+				F432A5D72D0B4166007FF308 /* Login.swift in Sources */,
 				F49946BC2CF2070E008A5E83 /* SceneDelegate.swift in Sources */,
 				F49946D82CF21CBA008A5E83 /* AuthResponse.swift in Sources */,
 				F49946CE2CF21384008A5E83 /* HomeViewController.swift in Sources */,
 				F4334AB82CF9F8EB00D7C755 /* GenericBottomSheet.swift in Sources */,
+				F432A5D52D0B3EA5007FF308 /* RestManager.swift in Sources */,
 				F49946D52CF21C6C008A5E83 /* NetworkClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

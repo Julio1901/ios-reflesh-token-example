@@ -13,65 +13,7 @@ class NetworkClient {
     
     var accessToken : String?
     
-     func authenticate(userName: String, password: String) async {
-        // Endpoint URL
-        guard let url = URL(string: "\(BASE_URL)auth/token") else {
-            print("Invalid URL")
-            return
-        }
-        
- 
-        let parameters = [
-            "username": userName,
-            "password": password
-        ]
-        
 
-        let bodyString = parameters.map { "\($0.key)=\($0.value)" }
-                                    .joined(separator: "&")
-        
-
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        request.httpBody = bodyString.data(using: .utf8)
-        
-
-        let session = URLSession.shared
-        let task = session.dataTask(with: request) { data, response, error in
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
-                return
-            }
-            guard let httpResponse = response as? HTTPURLResponse else {
-                print("Invalid response")
-                return
-            }
-            if (200...299).contains(httpResponse.statusCode) {
-                print("Authenticated successfully!")
-            } else if httpResponse.statusCode == 401 {
-                    print("Incorrect username or password")
-                    return
-            }
-            if let data = data {
-                do {
-                    let decoder = JSONDecoder()
-                    let authResponse = try decoder.decode(AuthResponse.self, from: data)
-                    print("Access Token: \(authResponse.accessToken)")
-                    print("Refresh Token: \(authResponse.refreshToken)")
-                    print("Token Type: \(authResponse.tokenType)")
-                    
-                    self.accessToken = authResponse.accessToken
-                    KeychainManager.shared.saveToken(authResponse.refreshToken, for: .reflesh_token)
-                } catch {
-                    print("Decoding error: \(error.localizedDescription)")
-                }
-            }
-        }
-        
-        task.resume()
-    }
- 
     
     
     func getWelcomeMessage() {

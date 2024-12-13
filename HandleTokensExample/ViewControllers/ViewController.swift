@@ -28,8 +28,11 @@ class ViewController: UIViewController {
         let password = passwordTextField.text ?? ""
         
         Task {
-            await self.mainViewModel.logIn(userName: userName, password: password, completion: { [weak self] in
-                self?.navigateToHome()
+            await self.mainViewModel.logIn(userName: userName, password: password, completion: { [weak self] loginSucess in
+                switch loginSucess {
+                    case .success(_):   self?.navigateToHome()
+                    case .failure(_):   debugPrint("Realizar tratativa para exibir mensagem de erro de autenticação")
+                }
             })
         }
     }
@@ -41,7 +44,7 @@ class ViewController: UIViewController {
             // Verifique se a navegação está disponível e, se sim, faça o push
             DispatchQueue.main.sync {
                 self.navigationController?.pushViewController(homeViewController, animated: true)
-                print("Validate!")
+//                print("Validate!")
             }
         }
     }
