@@ -54,7 +54,9 @@ extension HomeViewController {
     @objc func navigateToDetailsScreen() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let detailsViewController = storyboard.instantiateViewController(withIdentifier: "DetailsScreenViewController") as? DetailsScreenViewController {
+          
             self.navigationController?.pushViewController(detailsViewController, animated: true)
+            NotificationCenter.default.post(name: .showBottomSheet, object: nil)
         }
     }
     

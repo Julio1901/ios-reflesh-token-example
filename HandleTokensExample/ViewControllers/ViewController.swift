@@ -43,6 +43,7 @@ class ViewController: UIViewController {
         if let homeViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController {
             // Verifique se a navegação está disponível e, se sim, faça o push
             DispatchQueue.main.sync {
+              
                 self.navigationController?.pushViewController(homeViewController, animated: true)
 //                print("Validate!")
             }

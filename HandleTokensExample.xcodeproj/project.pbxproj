@@ -25,6 +25,7 @@
 		F49946E02CF3884A008A5E83 /* ProtectedRouteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49946DF2CF3884A008A5E83 /* ProtectedRouteResponse.swift */; };
 		F49946E22CF39AA4008A5E83 /* RefleshTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49946E12CF39AA4008A5E83 /* RefleshTokenResponse.swift */; };
 		F4BE97352D0DD7620045860F /* DetailsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BE97342D0DD7620045860F /* DetailsScreenViewController.swift */; };
+		F4BE97382D0DDEB10045860F /* NotificationCenter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BE97372D0DDEB10045860F /* NotificationCenter+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		F49946DF2CF3884A008A5E83 /* ProtectedRouteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtectedRouteResponse.swift; sourceTree = "<group>"; };
 		F49946E12CF39AA4008A5E83 /* RefleshTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefleshTokenResponse.swift; sourceTree = "<group>"; };
 		F4BE97342D0DD7620045860F /* DetailsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreenViewController.swift; sourceTree = "<group>"; };
+		F4BE97372D0DDEB10045860F /* NotificationCenter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		F49946B82CF2070E008A5E83 /* HandleTokensExample */ = {
 			isa = PBXGroup;
 			children = (
+				F4BE97362D0DDE9B0045860F /* Extensions */,
 				F4C2DC9E2CF8D0A700B341D1 /* Components */,
 				F49946DC2CF38187008A5E83 /* Data */,
 				F49946D92CF38149008A5E83 /* Domain */,
@@ -157,6 +160,14 @@
 				F49946DD2CF381B4008A5E83 /* KeychainManager.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		F4BE97362D0DDE9B0045860F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F4BE97372D0DDEB10045860F /* NotificationCenter+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F4C2DC9E2CF8D0A700B341D1 /* Components */ = {
@@ -247,6 +258,7 @@
 				F49946DE2CF381B4008A5E83 /* KeychainManager.swift in Sources */,
 				F432A5D72D0B4166007FF308 /* Login.swift in Sources */,
 				F49946BC2CF2070E008A5E83 /* SceneDelegate.swift in Sources */,
+				F4BE97382D0DDEB10045860F /* NotificationCenter+Extensions.swift in Sources */,
 				F49946D82CF21CBA008A5E83 /* AuthResponse.swift in Sources */,
 				F49946CE2CF21384008A5E83 /* HomeViewController.swift in Sources */,
 				F4334AB82CF9F8EB00D7C755 /* GenericBottomSheet.swift in Sources */,

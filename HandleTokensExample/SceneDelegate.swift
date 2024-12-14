@@ -10,6 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    private var bottomSheetView: GenericBottomSheet?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -17,6 +18,32 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(showBottomSheet), name: .showBottomSheet, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(hideBottomSheet), name: .hideBottomSheet, object: nil)
+    }
+    
+    @objc func showBottomSheet() {
+        guard let window = window else { return }
+        if bottomSheetView == nil {
+            bottomSheetView = GenericBottomSheet()
+            window.addSubview(bottomSheetView!)
+            animateBottomSheet()
+        }
+    }
+
+    @objc func hideBottomSheet() {
+        bottomSheetView?.removeFromSuperview()
+        bottomSheetView = nil
+    }
+
+    private func animateBottomSheet() {
+        guard let window = window, let bottomSheet = bottomSheetView else { return }
+           bottomSheet.frame.origin.y = window.frame.height
+           window.addSubview(bottomSheet)
+           UIView.animate(withDuration: 1.0, animations: {
+               bottomSheet.frame.origin.y = window.frame.height - bottomSheet.frame.height
+           })
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -24,6 +51,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This occurs shortly after the scene enters the background, or when its session is discarded.
         // Release any resources associated with this scene that can be re-created the next time the scene connects.
         // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
+        NotificationCenter.default.removeObserver(self)
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
