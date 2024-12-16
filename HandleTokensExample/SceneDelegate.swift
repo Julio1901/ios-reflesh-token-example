@@ -27,9 +27,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let window = window else { return }
         if bottomSheetView == nil {
             bottomSheetView = GenericBottomSheet()
-            DispatchQueue.main.sync {
-                window.addSubview(bottomSheetView!)
-                animateBottomSheet()
+            DispatchQueue.main.async {
+                window.addSubview(self.bottomSheetView!)
+                self.animateBottomSheet()
             }
           
         }

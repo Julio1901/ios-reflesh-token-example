@@ -80,7 +80,7 @@ class GenericBottomSheet : UIView {
     }
     
     private func dismiss() {
-        self.removeFromSuperview()
+        NotificationCenter.default.post(name: .hideBottomSheet, object: nil)
     }
     
     private func setupConstraints() {

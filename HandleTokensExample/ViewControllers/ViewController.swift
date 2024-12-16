@@ -20,8 +20,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(GenericBottomSheet())
+        NotificationCenter.default.post(name: .showBottomSheet, object: nil)
+        
     }
+    
+
     
     @objc func handleLogInClick() {
         let userName = userNameTextField.text ?? ""
