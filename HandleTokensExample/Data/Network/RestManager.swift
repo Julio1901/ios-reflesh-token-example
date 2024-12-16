@@ -12,10 +12,16 @@ class RestManager {
     internal let baseUrl = URL(string: "http://127.0.0.1:8000")
     
     //TODO: Verficar se precisa remover isso e fazer lógica que pega o access token
-    var accessToken : String?
+    var accessToken : String = ""
+    
+    static let shared = RestManager()
+    
+    private init () {}
+    
     
     enum EndPoint : String {
         case auth_token = "auth/token"
+        case protected = "protected"
     }
     
     enum HttpMethod: String {

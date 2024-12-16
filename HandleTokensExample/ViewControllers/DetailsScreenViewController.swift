@@ -9,6 +9,8 @@ import UIKit
 
 class DetailsScreenViewController: UIViewController {
 
+    let mainViewModel = MainViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
@@ -33,6 +35,8 @@ extension DetailsScreenViewController {
     }
     
     @objc func makegenericRequest() {
-        print("make generic request")
+        Task {
+            await self.mainViewModel.getWelcomeMessage()
+        }
     }
 }

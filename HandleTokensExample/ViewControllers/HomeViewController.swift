@@ -12,9 +12,7 @@ class HomeViewController: UIViewController {
     let mainViewModel = MainViewModel()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-//        view.addSubview(GenericBottomSheet())
-        mainViewModel.getWelcomeMessage()
+        super.viewDidLoad()        
         self.addSubviews()
       
     }
@@ -56,12 +54,13 @@ extension HomeViewController {
         if let detailsViewController = storyboard.instantiateViewController(withIdentifier: "DetailsScreenViewController") as? DetailsScreenViewController {
           
             self.navigationController?.pushViewController(detailsViewController, animated: true)
-            NotificationCenter.default.post(name: .showBottomSheet, object: nil)
         }
     }
     
     @objc func makegenericRequest() {
-        print("make generic request")
+        Task {
+            await self.mainViewModel.getWelcomeMessage()
+        }
     }
     
 }

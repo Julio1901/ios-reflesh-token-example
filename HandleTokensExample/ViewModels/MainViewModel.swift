@@ -9,7 +9,7 @@ import Foundation
 
 struct MainViewModel {
     
-    let rest = RestManager()
+    let rest = RestManager.shared
     
     var userLoggedSuccessfully: ((Bool) -> Void)?
     
@@ -25,14 +25,11 @@ struct MainViewModel {
                 completion(.failure(error))
                 
             }
-            
-
         }
     }
     
-    func getWelcomeMessage() {
-//        networkClient.getWelcomeMessage()
+    func getWelcomeMessage() async {
+        await rest.getWelcomeMessage()
     }
-    
     
 }
