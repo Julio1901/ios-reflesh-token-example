@@ -12,7 +12,7 @@
 		F4334AB82CF9F8EB00D7C755 /* GenericBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4334AB72CF9F8EB00D7C755 /* GenericBottomSheet.swift */; };
 		F49946BA2CF2070E008A5E83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49946B92CF2070E008A5E83 /* AppDelegate.swift */; };
 		F49946BC2CF2070E008A5E83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49946BB2CF2070E008A5E83 /* SceneDelegate.swift */; };
-		F49946BE2CF2070E008A5E83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49946BD2CF2070E008A5E83 /* ViewController.swift */; };
+		F49946BE2CF2070E008A5E83 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49946BD2CF2070E008A5E83 /* LoginViewController.swift */; };
 		F49946C12CF2070E008A5E83 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F49946C02CF2070E008A5E83 /* Base */; };
 		F49946C32CF2070F008A5E83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F49946C22CF2070F008A5E83 /* Assets.xcassets */; };
 		F49946C62CF2070F008A5E83 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F49946C52CF2070F008A5E83 /* Base */; };
@@ -27,6 +27,10 @@
 		F4BE97352D0DD7620045860F /* DetailsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BE97342D0DD7620045860F /* DetailsScreenViewController.swift */; };
 		F4BE97382D0DDEB10045860F /* NotificationCenter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BE97372D0DDEB10045860F /* NotificationCenter+Extensions.swift */; };
 		F4BE973A2D0DE1040045860F /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BE97392D0DE1040045860F /* Details.swift */; };
+		F4ECAAFC2D170A41000085E5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ECAAFB2D170A41000085E5 /* AppCoordinator.swift */; };
+		F4ECAAFF2D170CD5000085E5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ECAAFE2D170CD5000085E5 /* Coordinator.swift */; };
+		F4ECAB012D1719D5000085E5 /* KeychainKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ECAB002D1719D5000085E5 /* KeychainKeys.swift */; };
+		F4ECAB042D171BF9000085E5 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ECAB032D171BF9000085E5 /* UserManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +40,7 @@
 		F49946B62CF2070E008A5E83 /* HandleTokensExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandleTokensExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F49946B92CF2070E008A5E83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F49946BB2CF2070E008A5E83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F49946BD2CF2070E008A5E83 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F49946BD2CF2070E008A5E83 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F49946C02CF2070E008A5E83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F49946C22CF2070F008A5E83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F49946C52CF2070F008A5E83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +56,10 @@
 		F4BE97342D0DD7620045860F /* DetailsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScreenViewController.swift; sourceTree = "<group>"; };
 		F4BE97372D0DDEB10045860F /* NotificationCenter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Extensions.swift"; sourceTree = "<group>"; };
 		F4BE97392D0DE1040045860F /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
+		F4ECAAFB2D170A41000085E5 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		F4ECAAFE2D170CD5000085E5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F4ECAB002D1719D5000085E5 /* KeychainKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKeys.swift; sourceTree = "<group>"; };
+		F4ECAB032D171BF9000085E5 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,7 @@
 				F432A5D42D0B3EA5007FF308 /* RestManager.swift */,
 				F432A5D62D0B4166007FF308 /* Login.swift */,
 				F4BE97392D0DE1040045860F /* Details.swift */,
+				F4ECAB002D1719D5000085E5 /* KeychainKeys.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -94,6 +103,7 @@
 		F49946B82CF2070E008A5E83 /* HandleTokensExample */ = {
 			isa = PBXGroup;
 			children = (
+				F4ECAAF92D170A17000085E5 /* Presentation */,
 				F4BE97362D0DDE9B0045860F /* Extensions */,
 				F4C2DC9E2CF8D0A700B341D1 /* Components */,
 				F49946DC2CF38187008A5E83 /* Data */,
@@ -115,7 +125,7 @@
 		F49946CF2CF219A8008A5E83 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F49946BD2CF2070E008A5E83 /* ViewController.swift */,
+				F49946BD2CF2070E008A5E83 /* LoginViewController.swift */,
 				F49946CD2CF21384008A5E83 /* HomeViewController.swift */,
 				F4BE97342D0DD7620045860F /* DetailsScreenViewController.swift */,
 			);
@@ -151,6 +161,7 @@
 		F49946D92CF38149008A5E83 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				F4ECAB022D171BEA000085E5 /* UseCases */,
 				F49946DA2CF38160008A5E83 /* SecureStorage.swift */,
 			);
 			path = Domain;
@@ -179,6 +190,39 @@
 				F4334AB72CF9F8EB00D7C755 /* GenericBottomSheet.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		F4ECAAF92D170A17000085E5 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F4ECAAFA2D170A22000085E5 /* Coordinators */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		F4ECAAFA2D170A22000085E5 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				F4ECAAFD2D170CC3000085E5 /* Protocols */,
+				F4ECAAFB2D170A41000085E5 /* AppCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		F4ECAAFD2D170CC3000085E5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F4ECAAFE2D170CD5000085E5 /* Coordinator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F4ECAB022D171BEA000085E5 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				F4ECAB032D171BF9000085E5 /* UserManager.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,9 +299,13 @@
 				F49946D22CF219CF008A5E83 /* MainViewModel.swift in Sources */,
 				F49946E22CF39AA4008A5E83 /* RefleshTokenResponse.swift in Sources */,
 				F49946E02CF3884A008A5E83 /* ProtectedRouteResponse.swift in Sources */,
-				F49946BE2CF2070E008A5E83 /* ViewController.swift in Sources */,
+				F49946BE2CF2070E008A5E83 /* LoginViewController.swift in Sources */,
 				F49946DB2CF38160008A5E83 /* SecureStorage.swift in Sources */,
+				F4ECAB012D1719D5000085E5 /* KeychainKeys.swift in Sources */,
 				F49946BA2CF2070E008A5E83 /* AppDelegate.swift in Sources */,
+				F4ECAAFF2D170CD5000085E5 /* Coordinator.swift in Sources */,
+				F4ECAAFC2D170A41000085E5 /* AppCoordinator.swift in Sources */,
+				F4ECAB042D171BF9000085E5 /* UserManager.swift in Sources */,
 				F49946DE2CF381B4008A5E83 /* KeychainManager.swift in Sources */,
 				F432A5D72D0B4166007FF308 /* Login.swift in Sources */,
 				F49946BC2CF2070E008A5E83 /* SceneDelegate.swift in Sources */,

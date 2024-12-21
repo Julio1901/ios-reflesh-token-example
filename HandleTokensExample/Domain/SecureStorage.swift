@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SecureStorage {
-    func saveToken(_ token: String, for key: KeychainManagerKeys) -> Bool
-    func getToken(for key: KeychainManagerKeys) -> String?
-    func deleteToken(for key: KeychainManagerKeys) -> Bool
+    func saveToken(_ token: String, for key: KeychainKey) -> Bool
+    func getToken(for key: KeychainKey) -> String?
+    func deleteToken(for key: KeychainKey) -> Bool
 }

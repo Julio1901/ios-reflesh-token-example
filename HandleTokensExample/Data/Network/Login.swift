@@ -53,6 +53,8 @@ extension RestManager {
                    let authResponse = try decoder.decode(AuthResponse.self, from: data)
                    self.accessToken = authResponse.accessToken
                    KeychainManager.shared.saveToken(authResponse.refreshToken, for: .reflesh_token)
+                   //TODO: JUlio remover isso. Precisa estar no useCase na camada Domain
+                   UserManager.shared.isLogged = true
                    completion(.success(authResponse))
                } catch {
                    print("Decoding error: \(error.localizedDescription)")

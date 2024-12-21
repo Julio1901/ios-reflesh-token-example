@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     let mainViewModel = MainViewModel()
     
@@ -19,9 +19,7 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-//        NotificationCenter.default.post(name: .showBottomSheet, object: nil)
-        GenericBottomSheet.shared.show()
+        super.viewDidLoad()        
     }
     
     @objc func handleLogInClick() {

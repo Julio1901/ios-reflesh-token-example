@@ -10,6 +10,8 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var appCoordinator: AppCoordinator?
+    
     private var bottomSheetView: GenericBottomSheet?
 
 
@@ -21,6 +23,31 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(showBottomSheet), name: .showBottomSheet, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(hideBottomSheet), name: .hideBottomSheet, object: nil)
+        
+        
+        
+        // Garantir que a cena seja do tipo UIWindowScene
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+
+        // Criar a janela principal
+        window = UIWindow(windowScene: windowScene)
+
+        // Criar o UINavigationController
+        let navigationController = UINavigationController()
+
+        // Criar o UserManager
+   
+
+        // Criar o AppCoordinator e injetar o UINavigationController e o UserManager
+        appCoordinator = AppCoordinator(navigationController: navigationController)
+
+        // Definir o rootViewController como o UINavigationController
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+
+        // Iniciar o fluxo de navegação
+        appCoordinator?.start()
+        
     }
     
     @objc func showBottomSheet() {
@@ -40,6 +67,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        bottomSheetView?.removeFromSuperview()
         bottomSheetView?.handleDismiss()
         bottomSheetView = nil
+        UserManager.shared.logOut()
+        appCoordinator?.showLogin()
     }
 
     private func animateBottomSheet() {
