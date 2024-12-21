@@ -33,7 +33,8 @@ extension RestManager {
                 return
             } else if httpResponse.statusCode == 401 {
                     print("Token expired")
-                NotificationCenter.default.post(name: .showBottomSheet, object: nil)
+//                NotificationCenter.default.post(name: .showBottomSheet, object: nil)
+                GenericBottomSheet.shared.show()
                     return
             }
             if let data = data {

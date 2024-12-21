@@ -9,7 +9,9 @@ import UIKit
 
 class GenericBottomSheet : UIView {
         
-    private let contentView: UIView = {
+    static let shared = GenericBottomSheet()
+        
+    let contentView: UIView = {
         let it = UIView()
         it.translatesAutoresizingMaskIntoConstraints = false
         it.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
@@ -31,9 +33,8 @@ class GenericBottomSheet : UIView {
         return it
     }()
     
-    init() {
+     private init() {
         super.init(frame: .zero)
-        setup()
     }
     
     required init?(coder: NSCoder) {
@@ -60,15 +61,22 @@ class GenericBottomSheet : UIView {
     
     private func addSubViews() {
         addSubview(contentView)
-        addSubview(contentText)
-        addSubview(primaryButton)
+        contentView.addSubview(contentText)
+        contentView.addSubview(primaryButton)
+//        addSubview(contentText)
+//        addSubview(primaryButton)
     }
     
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
+        resetConstraints()
+        setup()
         setupConstraints()
     }
     
+    private func resetConstraints() {
+         self.removeConstraints(self.constraints)
+     }
     
     @objc private func buttonTouchDown() {
         primaryButton.alpha = 0.5
@@ -79,12 +87,40 @@ class GenericBottomSheet : UIView {
         dismiss()
     }
     
-    private func dismiss() {
+    func show() {
+        NotificationCenter.default.post(name: .showBottomSheet, object: nil)
+    }
+    
+    func dismiss() {
         NotificationCenter.default.post(name: .hideBottomSheet, object: nil)
+    }
+    
+    func handleBottomSheetAnimation() {
+        guard let window = UIApplication.shared.windows.first else { return }
+        
+        contentView.frame.origin.y = bounds.height
+        UIView.animate(withDuration: 0.3) {
+            self.contentView.frame.origin.y = self.bounds.height - 448
+//            self.dimmingView.alpha = 1
+        }
+
+    }
+    
+    
+    func handleDismiss() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.contentView.frame.origin.y = self.bounds.height
+            self.backgroundColor = .clear
+        }) { _ in
+            self.removeFromSuperview()
+        }
     }
     
     private func setupConstraints() {
         guard let superview = self.superview else { return }
+        
+        print("test heigth: \(superview.heightAnchor)")
+        
         NSLayoutConstraint.activate([
             self.widthAnchor.constraint(equalTo: superview.widthAnchor),
             self.heightAnchor.constraint(equalTo: superview.heightAnchor),

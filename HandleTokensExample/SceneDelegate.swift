@@ -26,27 +26,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     @objc func showBottomSheet() {
         guard let window = window else { return }
         if bottomSheetView == nil {
-            bottomSheetView = GenericBottomSheet()
+            bottomSheetView = GenericBottomSheet.shared
             DispatchQueue.main.async {
                 window.addSubview(self.bottomSheetView!)
-                self.animateBottomSheet()
+//                self.animateBottomSheet()
+                self.bottomSheetView?.handleBottomSheetAnimation()
             }
           
         }
     }
 
     @objc func hideBottomSheet() {
-        bottomSheetView?.removeFromSuperview()
+//        bottomSheetView?.removeFromSuperview()
+        bottomSheetView?.handleDismiss()
         bottomSheetView = nil
     }
 
     private func animateBottomSheet() {
         guard let window = window, let bottomSheet = bottomSheetView else { return }
-           bottomSheet.frame.origin.y = window.frame.height
-           window.addSubview(bottomSheet)
-           UIView.animate(withDuration: 1.0, animations: {
-               bottomSheet.frame.origin.y = window.frame.height - bottomSheet.frame.height
-           })
+            bottomSheet.contentView.frame.origin.y = window.frame.height
+            window.addSubview(bottomSheet)
+            UIView.animate(withDuration: 1.0, animations: {
+                bottomSheet.contentView.frame.origin.y = window.frame.height - bottomSheet.contentView.frame.height
+            })
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
