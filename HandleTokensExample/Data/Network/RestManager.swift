@@ -11,7 +11,7 @@ class RestManager {
     
     internal let baseUrl = URL(string: "http://127.0.0.1:8000")
     
-    //TODO: Verficar se precisa remover isso e fazer lógica que pega o access token
+    //TODO: Check if this needs to be removed and implement logic to fetch the access token.
     var accessToken : String = ""
     
     static let shared = RestManager()
@@ -40,7 +40,7 @@ class RestManager {
     
     
     func makeRequest() {
-        //TODO: Criar aqui lógica para lidar com tokens expirados, obtenção de novos tokens e deslogar usuário se necessário
+        //TODO: Create logic here to handle expired tokens, obtain new tokens, and log out the user if necessary.
         
     }
     

@@ -10,7 +10,7 @@ import Foundation
 extension RestManager {
 
     func authenticate(userName: String, password: String, completion: @escaping (Result<AuthResponse, RestManagerError>) -> Void) async {
-        //TODO: Depois, aprender como fazer ambientes diferentes
+        //TODO: Then, learn how to create different environments.
         var url = self.baseUrl
         guard var url else { return }
         url.append(component: EndPoint.auth_token.rawValue)
@@ -45,15 +45,15 @@ extension RestManager {
            }
            if let data = data {
                do {
-                   //TODO: Remover isso
+                   //TODO: Remove it
                    if let jsonString = String(data: data, encoding: .utf8) {
                        print("Response JSON TEST: \(jsonString)")
                    }
                    let decoder = JSONDecoder()
                    let authResponse = try decoder.decode(AuthResponse.self, from: data)
                    self.accessToken = authResponse.accessToken
-                   KeychainManager.shared.saveToken(authResponse.refreshToken, for: .reflesh_token)
-                   //TODO: JUlio remover isso. Precisa estar no useCase na camada Domain
+                   _ = KeychainManager.shared.saveToken(authResponse.refreshToken, for: .reflesh_token)
+                   //TODO: Julio remove this. It needs to be in the UseCase within the Domain layer.
                    UserManager.shared.isLogged = true
                    completion(.success(authResponse))
                } catch {

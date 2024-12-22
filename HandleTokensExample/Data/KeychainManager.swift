@@ -60,10 +60,10 @@ final class KeychainManager: SecureStorage {
     
     
     static func set<T: Encodable>(value: T, key: KeychainKey, accessGroup: String? = nil) -> Bool {
-        // Tentando codificar o valor para Data
+
         guard let valueData = try? JSONEncoder().encode(value) else { return false }
         
-        // Criando o dicionário de atributos para o Keychain
+
         var query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrAccount as String: key.rawValue,
@@ -74,21 +74,21 @@ final class KeychainManager: SecureStorage {
             query[kSecAttrAccessGroup as String] = accessGroup
         }
         
-        // Remover o item existente, se houver
+
         let _ = SecItemDelete(query as CFDictionary)
         
-        // Tentando adicionar o item no Keychain
+     
         let status = SecItemAdd(query as CFDictionary, nil)
         
         return status == errSecSuccess
     }
     
     static func get(key: KeychainKey, accessGroup: String? = nil) -> Bool? {
-        // Criando o dicionário de atributos para o Keychain
+
         var query: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrAccount as String: key.rawValue,
-            kSecReturnData as String: kCFBooleanTrue as Any,  // Solicitando os dados
+            kSecReturnData as String: kCFBooleanTrue as Any,
             kSecMatchLimit as String: kSecMatchLimitOne
         ]
         
@@ -96,20 +96,20 @@ final class KeychainManager: SecureStorage {
             query[kSecAttrAccessGroup as String] = accessGroup
         }
         
-        // Tentando buscar o item no Keychain
+
         var result: AnyObject?
         let status = SecItemCopyMatching(query as CFDictionary, &result)
         
         guard status == errSecSuccess, let data = result as? Data else {
-            return nil  // Se não encontrar ou houver erro, retorna nil
+            return nil
         }
         
-        // Tentando decodificar os dados para um Bool (especificamente para o valor de 'user_logged')
+     
         let decodedValue = try? JSONDecoder().decode(Bool.self, from: data)
         
         return decodedValue
     }
-     // Função para remover um item do Keychain
+
      static func remove(key: KeychainKey, accessGroup: String? = nil) -> Bool {
          var query: [String: Any] = [
              kSecClass as String: kSecClassGenericPassword,
